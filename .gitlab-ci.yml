@@ -1,0 +1,19 @@
+stages:
+  - build
+  - deploy
+
+build angular:
+  stage: build
+  image: node:20
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist/bc-test-front
+
+deploy angular:
+  stage: deploy
+  image: pockost/phploy:4.9.3
+  script:
+    - phploy -s prod

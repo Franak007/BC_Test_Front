@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit{
   getUsers(){
 
     this.users.getAllUsers().subscribe(data=>{
+      console.log(data)
       this.usersList = data;
       return this.usersList;
     })
@@ -45,7 +46,6 @@ export class HomeComponent implements OnInit{
   getNftUserId(url: string){
 
     let nftUserId = Number(url.charAt(url.length - 1))-1;
-    console.log(nftUserId);
     return nftUserId;
   }
 
