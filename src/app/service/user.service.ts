@@ -8,7 +8,7 @@ import {IUser} from "../interface/iuser";
 })
 export class UserService {
 
-  url: string = "https://127.0.0.1:8000"
+  url: string = "http://api-businesscasefp.atwebpages.com"
 
   constructor(private http: HttpClient) { }
 

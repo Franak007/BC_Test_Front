@@ -1,9 +1,9 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {INft} from "../interface/inft";
-import {NftService} from "../service/nft.service";
+import {INft} from "../../interface/inft";
+import {NftService} from "../../service/nft.service";
 import {Observable} from "rxjs";
-import {UserService} from "../service/user.service";
-import {IUser} from "../interface/iuser";
+import {UserService} from "../../service/user.service";
+import {IUser} from "../../interface/iuser";
 
 @Component({
   selector: 'app-home',
