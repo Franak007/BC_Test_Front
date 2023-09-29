@@ -8,14 +8,16 @@ import {IUser} from "../interface/iuser";
 })
 export class UserService {
 
+  url: string = "https://127.0.0.1:8000"
+
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<IUser[]>{
-    return this.http.get<IUser[]>("https://127.0.0.1:8000/api/users")
+    return this.http.get<IUser[]>(this.url+"/api/users")
   }
 
   getOneUser(id: number): Observable<IUser>{
-    return this.http.get<IUser>("https://127.0.0.1:8000/api/users"+id)
+    return this.http.get<IUser>(this.url+"/api/users"+id)
   }
 
 }

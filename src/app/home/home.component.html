@@ -1,8 +1,8 @@
 <h1>Accueil</h1>
 <div class="container card-group col-8">
   <div class="" *ngFor="let nft of nftsList">
-    <div class="card m-2 text-center text-white bg-dark" style="width: 14rem;">
-      <img src="{{nft.imagePath}}" class="card-img-top" alt="...">
+    <div class="card m-2 text-center text-white bg-dark rounded" style="width: 14rem;">
+      <img src="{{nft.imagePath}}" class="card-img-top p-1 mx-auto rounded-circle" alt="..." style="width: 10rem;">
       <div class="card-body">
         <h5 class="card-title text-center">{{nft.title}}</h5>
         <p class="text-center">Galerie de {{usersList[getNftUserId(nft.user)].username}}</p>

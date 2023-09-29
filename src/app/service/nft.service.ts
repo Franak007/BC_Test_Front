@@ -9,15 +9,18 @@ import {IUser} from "../interface/iuser";
 })
 export class NftService {
 
+  url: string = "https://127.0.0.1:8000"
+
   constructor(private http: HttpClient) { }
 
+
   getAllNfts(): Observable<INft[]> {
-    return this.http.get<INft[]>("https://127.0.0.1:8000/api/nfts");
+    return this.http.get<INft[]>(this.url+"/api/nfts");
   }
 
 
   getOneUserByRoute(route:string): Observable<INft>{
-    return this.http.get<INft>("https://127.0.0.1:8000"+route)
+    return this.http.get<INft>(this.url+route)
   }
 
 }
