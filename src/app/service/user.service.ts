@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {IUser} from "../interface/iuser";
 
@@ -8,7 +8,8 @@ import {IUser} from "../interface/iuser";
 })
 export class UserService {
 
-  url: string = "http://api-businesscasefp.atwebpages.com"
+  url: string = "https://127.0.0.1:8000";
+  // url: string = "http://api-businesscasefp.atwebpages.com";
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +18,15 @@ export class UserService {
   }
 
   getOneUser(id: number): Observable<IUser>{
-    return this.http.get<IUser>(this.url+"/api/users"+id)
+    return this.http.get<IUser>(this.url+"/api/users/"+id)
+  }
+
+  addUser(user: IUser) {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = JSON.stringify(user);
+    return this.http.post<IUser>(this.url+'/api/users', body,
+      {'headers' : headers});
+
   }
 
 }

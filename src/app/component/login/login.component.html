@@ -1,1 +1,36 @@
-<p>login works!</p>
+<div class="container m-5 mx-auto">
+  <form (ngSubmit)="handleSubmit()" [formGroup]="form">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white">
+          <div class="card-body text-center">
+
+            <div>
+
+              <h2 class="fw-bold m-3 text-uppercase">Se connecter</h2>
+              <p class="text-white-50 my-5">Merci de renseigner votre email et mot de passe !</p>
+
+              <div class="form-outline form-white mb-4">
+                <label class="form-label" for="typeEmailX">Email</label>
+                <input type="email" class="form-control w-75 mx-auto" formControlName="username" required/>
+              </div>
+
+              <div class="form-outline form-white my-4">
+                <label class="form-label" for="typePasswordX">Mot de passe</label>
+                <input type="password" id="typePasswordX" class="form-control w-75 mx-auto" formControlName="password" required />
+              </div>
+
+              <p class="small pb-lg-2"><a class="text-white-50" href="#!">Mot de passe oublié ?</a></p>
+              <button class="btn btn-dark px-5" type="submit">Login</button>
+            </div>
+
+            <div>
+              <p class="mt-5">Vous n'avez pas de compte ? <a routerLink="/register" class="text-white-50 fw-bold"><br>Enregistrez-vous</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

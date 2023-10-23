@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit{
   getNfts(){
 
     this.nfts.getAllNfts().subscribe(data=>{
-      console.log(data);
       this.nftsList = data;
       return this.nftsList;
     })
@@ -37,7 +36,6 @@ export class HomeComponent implements OnInit{
   getUsers(){
 
     this.users.getAllUsers().subscribe(data=>{
-      console.log(data)
       this.usersList = data;
       return this.usersList;
     })

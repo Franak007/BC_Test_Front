@@ -10,3 +10,11 @@ export interface IUser {
   nfts: [string],
   address: [string]
 }
+
+export interface Icredentials{
+  username: string,
+  password: string
+}
+export interface Itoken{
+  token: string
+}

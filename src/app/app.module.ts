@@ -11,6 +11,10 @@ import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { UserComponent } from './component/user/user.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {TokenInterceptor} from "./token.interceptor";
+import { AccountComponent } from './account/account.component';
+import { Error404Component } from './error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +25,18 @@ import { UserComponent } from './component/user/user.component';
     EthPageComponent,
     LoginComponent,
     RegisterComponent,
-    UserComponent
+    UserComponent,
+    AccountComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [TokenInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

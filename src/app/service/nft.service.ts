@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {INft} from "../interface/inft";
 import {IUser} from "../interface/iuser";
@@ -9,13 +9,15 @@ import {IUser} from "../interface/iuser";
 })
 export class NftService {
 
-  url: string = "http://api-businesscasefp.atwebpages.com"
+  url: string = "https://127.0.0.1:8000";
+  // url: string = "http://api-businesscasefp.atwebpages.com";
 
   constructor(private http: HttpClient) { }
 
 
   getAllNfts(): Observable<INft[]> {
-    return this.http.get<INft[]>(this.url+"/api/nfts");
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.get<INft[]>(this.url+"/api/nfts", {'headers' : headers});
   }
 
 
