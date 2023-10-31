@@ -5,8 +5,8 @@ import {EthPageComponent} from "./component/eth-page/eth-page.component";
 import {AboutComponent} from "./component/about/about.component";
 import {LoginComponent} from "./component/login/login.component";
 import {RegisterComponent} from "./component/register/register.component";
-import {AccountComponent} from "./account/account.component";
-import {Error404Component} from "./error404/error404.component";
+import {Error404Component} from "./component/error404/error404.component";
+import {AccountComponent} from "./component/account/account.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from "../service/user.service";
+import {UserService} from "../../service/user.service";
 import {ActivatedRoute} from "@angular/router";
-import {IUser} from "../interface/iuser";
-import {AuthService} from "../service/auth.service";
+import {IUser} from "../../interface/iuser";
+import {AuthService} from "../../service/auth.service";
 
 @Component({
   selector: 'app-account',

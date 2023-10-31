@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   constructor(private auth: AuthService, public user: UserService) { }
 
   users:IUser[] = [] ;
+  selectedUser:IUser|undefined;
 
   ngOnInit(){
     this.getusers();
@@ -32,4 +33,10 @@ export class HeaderComponent implements OnInit {
     })
   }
 
+  selectUser(id:number) {
+    this.user.getOneUser(id).subscribe(data=>{
+      this.selectedUser = data;
+      console.log(this.selectedUser);
+    })
+  }
 }

@@ -13,8 +13,8 @@ import { RegisterComponent } from './component/register/register.component';
 import { UserComponent } from './component/user/user.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {TokenInterceptor} from "./token.interceptor";
-import { AccountComponent } from './account/account.component';
-import { Error404Component } from './error404/error404.component';
+import { AccountComponent } from './component/account/account.component';
+import { Error404Component } from './component/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { Error404Component } from './error404/error404.component';
     RegisterComponent,
     UserComponent,
     AccountComponent,
-    Error404Component
+    Error404Component,
   ],
   imports: [
     BrowserModule,

@@ -19,9 +19,7 @@
           <a class="nav-link text-white bg-primary rounded mx-2" routerLink="/account">Mes NFTs</a>
         </li>
         <li class="nav-item" *ngIf="checkIsLogged()">
-          <div *ngFor="let user of users">
-          <button type="submit" class="nav-link text-white bg-primary rounded mx-2" routerLink="/users/{{user.id}}">Mon compte</button>
-          </div>
+          <button type="button" class="nav-link text-white bg-primary rounded mx-2" routerLink="/users/">Mon compte</button>
         </li>
       </ul>
       <ul class="navbar-nav">
