@@ -18,8 +18,8 @@
         <li class="nav-item" *ngIf="checkIsLogged()">
           <a class="nav-link text-white bg-primary rounded mx-2" routerLink="/account">Mes NFTs</a>
         </li>
-        <li class="nav-item" *ngIf="checkIsLogged()">
-          <button type="button" class="nav-link text-white bg-primary rounded mx-2" routerLink="/users/">Mon compte</button>
+        <li class="nav-item" *ngIf="userData">
+          <a class="nav-link text-white bg-primary rounded mx-2" [routerLink]="'/users/' + (userData?.id || '')" *ngIf="checkIsLogged()">Mon compte</a>
         </li>
       </ul>
       <ul class="navbar-nav">

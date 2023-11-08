@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   })
 
   handleSubmit(){
-    console.log(this.form.value);
+    // console.log(this.form.value);
     this.auth.login(this.form.value).subscribe(
       (data:Itoken)=>{
         console.log(data.token);

@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class AuthService {
 
@@ -35,11 +35,27 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-  // getUserIdFromToken(): number | null {
-  //   const token = this.getJwtToken();
-  //   if (token) {
-  //     const decodedToken = jwt_decode(token);
-  //     return decodedToken.sub;
-  //   } return null;
-  // }
+  getLoggedInUser(): any {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const tokenPayload = JSON.parse(atob(token.split('.')[1])); // Décodage du payload
+      return tokenPayload; // Vous pouvez retourner les informations de l'utilisateur ici
+    }
+    return null; // Aucun utilisateur connecté ou token manquant
+  }
+
+  getLoggedInUserUsername(): string | null {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const tokenParts = token.split('.');
+      if (tokenParts.length === 3) {
+        const payload = JSON.parse(atob(tokenParts[1]));
+        const username = payload.username; // Remplacez 'email' par la clé correcte dans votre payload
+        console.log(username);
+        return username;
+      }
+    }
+    return null;
+  }
+
 }

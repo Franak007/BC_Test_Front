@@ -10,13 +10,15 @@ import {IUser} from "../../interface/iuser";
 })
 export class HeaderComponent implements OnInit {
 
+  userData: any;
   constructor(private auth: AuthService, public user: UserService) { }
 
   users:IUser[] = [] ;
   selectedUser:IUser|undefined;
 
   ngOnInit(){
-    this.getusers();
+    this.getUserData();
+    console.log(this.getUserData());
   }
   logout(){
     this.auth.clearToken();
@@ -38,5 +40,17 @@ export class HeaderComponent implements OnInit {
       this.selectedUser = data;
       console.log(this.selectedUser);
     })
+  }
+
+  getUserData() {
+    this.user.getUserData().subscribe(
+      (userData) => {
+        console.log('Données de l\'utilisateur connecté :', userData);
+        this.userData = userData;
+      },
+      (error) => {
+        console.error('Erreur lors de la récupération des données de l\'utilisateur :', error);
+      }
+    );
   }
 }
