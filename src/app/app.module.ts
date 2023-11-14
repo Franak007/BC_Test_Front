@@ -15,6 +15,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {TokenInterceptor} from "./token.interceptor";
 import { AccountComponent } from './component/account/account.component';
 import { Error404Component } from './component/error404/error404.component';
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { Error404Component } from './component/error404/error404.component';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [TokenInterceptor],
   bootstrap: [AppComponent]

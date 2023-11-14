@@ -15,26 +15,21 @@ export class AuthService {
   login(credentials:any): Observable<Itoken> {
     return this.http.post<Itoken>(this.url+"/login_check", credentials);
   }
-
   saveToken(token:string){
     localStorage.setItem('token',token);
     this.route.navigate(['/']);
   }
-
   isLogged():boolean{
     const token = localStorage.getItem('token');
     return !! token;
   }
-
   clearToken(){
     localStorage.removeItem('token');
     this.route.navigate(['/']);
   }
-
   getToken(){
     return localStorage.getItem('token');
   }
-
   getLoggedInUser(): any {
     const token = localStorage.getItem('token');
     if (token) {
@@ -43,7 +38,6 @@ export class AuthService {
     }
     return null; // Aucun utilisateur connecté ou token manquant
   }
-
   getLoggedInUserUsername(): string | null {
     const token = localStorage.getItem('token');
     if (token) {

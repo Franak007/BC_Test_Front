@@ -11,17 +11,17 @@ import {IUser} from "../../interface/iuser";
 export class HeaderComponent implements OnInit {
 
   userData: any;
-  constructor(private auth: AuthService, public user: UserService) { }
-
   users:IUser[] = [] ;
   selectedUser:IUser|undefined;
 
+  constructor(private auth: AuthService, public user: UserService) { }
+
   ngOnInit(){
     this.getUserData();
-    console.log(this.getUserData());
   }
   logout(){
     this.auth.clearToken();
+    this.userData = "";
   }
 
   checkIsLogged(): boolean {

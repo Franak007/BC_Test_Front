@@ -1,7 +1,8 @@
-  <div>
+  <div class="container m-5 mx-auto">
     <h5 class="card-title">{{selectedUser?.firstName}}</h5>
     <p class="card-text">{{selectedUser?.username}}</p>
     <p class="card-text">{{selectedUser?.email}}</p>
+    <p class="card-text">{{selectedUser?.birthDate | date: 'd-MMMM-yyyy'}}</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 

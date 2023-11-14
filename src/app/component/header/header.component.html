@@ -1,8 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
   <div class="container-fluid">
-    <a class="navbar-brand text-white" routerLink="/">Navbar</a>
+    <a class="navbar-brand text-white" routerLink="/"><img id="logo" style="height: 2.5em" src="assets/logoMyNft'S.png" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 <!--    <pre *ngIf="user$ | async as user">{{ user.username }}</pre>-->
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active text-white" aria-current="page" routerLink="/">Home</a>
@@ -15,22 +18,25 @@
         </li>
       </ul>
       <ul class="navbar-nav">
-        <li class="nav-item" *ngIf="checkIsLogged()">
-          <a class="nav-link text-white bg-primary rounded mx-2" routerLink="/account">Mes NFTs</a>
-        </li>
-        <li class="nav-item" *ngIf="userData">
-          <a class="nav-link text-white bg-primary rounded mx-2" [routerLink]="'/users/' + (userData?.id || '')" *ngIf="checkIsLogged()">Mon compte</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item mx-2" *ngIf="checkIsLogged()">
-          <a class="btn btn-dark" (click)="logout()">Déconnexion</a>
+        <li class="nav-item mx-2 dropdown" *ngIf="checkIsLogged() && userData">
+          <a class="nav-link dropdown-toggle text-white m-1 fs-6" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Bienvenue {{userData?.username}}</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li class="nav-item mx-2" *ngIf="checkIsLogged()">
+              <a class="btn btn-dark m-1" routerLink="/account">Mes NFTs</a>
+            </li>
+            <li class="nav-item mx-2" *ngIf="checkIsLogged() && userData">
+              <a class="btn btn-dark m-1" [routerLink]="'/users/' + (userData?.id || '')">Mon compte</a>
+            </li>
+            <li class="nav-item mx-2" *ngIf="checkIsLogged()">
+              <a class="btn btn-dark m-1" (click)="logout()">Déconnexion</a>
+            </li>
+          </ul>
         </li>
         <li class="nav-item mx-2" *ngIf="!checkIsLogged()">
-          <a class="btn btn-dark" routerLink="/register">S'inscrire</a>
+          <a class="btn btn-dark m-1" routerLink="/register">S'inscrire</a>
         </li>
         <li class="nav-item mx-2" *ngIf="!checkIsLogged()">
-          <a class="btn btn-dark" routerLink="/login">Connexion</a>
+          <a class="btn btn-dark m-1" routerLink="/login">Connexion</a>
         </li>
       </ul>
     </div>
