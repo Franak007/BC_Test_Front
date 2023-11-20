@@ -3,6 +3,7 @@ export interface IUser {
   email: string,
   roles: [string],
   password: string,
+  plainPassword: string,
   firstName: string,
   lastName: string,
   username: string,

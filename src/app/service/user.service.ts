@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {map, Observable} from "rxjs";
+import {BehaviorSubject, catchError, map, Observable} from "rxjs";
 import {IUser} from "../interface/iuser";
 import {AuthService} from "./auth.service";
 
@@ -11,6 +11,8 @@ export class UserService {
 
   url: string = "https://127.0.0.1:8000/api";
   // url: string = "http://api-businesscasefp.atwebpages.com";
+  hasError: boolean = false;
+  errorMessage: string = '';
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
@@ -29,7 +31,7 @@ export class UserService {
   addUser(user: IUser) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const body = JSON.stringify(user);
-    return this.http.post<IUser>(this.url+"/users/", body,
+    return this.http.post<IUser>(this.url+"/users", body,
       {'headers' : headers});
   }
 
