@@ -20,6 +20,12 @@ export class UserService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.get<IUser[]>(this.url+"/users/", {'headers' : headers})
   }
+
+
+  getOneUser(id: number): Observable<IUser>{
+    return this.http.get<IUser>(this.url+"/users/"+id)
+  }
+
   getUserData(): Observable<IUser | undefined> {
     return this.getAllUsers().pipe(
       map((users: IUser[]) => {
@@ -33,15 +39,6 @@ export class UserService {
     const body = JSON.stringify(user);
     return this.http.post<IUser>(this.url+"/users", body,
       {'headers' : headers});
-  }
-
-  getUser(): Observable<IUser[]>{
-    return this.http.get<IUser[]>("https://127.0.0.1:8000/api/user/whoami");
-  }
-
-
-  getOneUser(id: number): Observable<IUser>{
-    return this.http.get<IUser>(this.url+"/users/"+id)
   }
 
 }

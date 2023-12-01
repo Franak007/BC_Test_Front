@@ -1,11 +1,46 @@
+<div class="container m-5 mx-auto">
 <form #addUser="ngForm" (ngSubmit)="onSubmit(addUser)">
-  <input type="text" class="m-3" style="width: 15em" name="firstName" placeholder="firstName" ngModel required><br>
-  <input type="text" class="m-3" style="width: 15em" name="lastName" placeholder="lastName" ngModel required><br>
-  <input type="text" class="m-3" style="width: 15em" name="username" placeholder="username" ngModel required><br>
-  <input type="date" class="m-3" style="width: 15em" name="birthDate" placeholder="birthDate" ngModel required><br>
-  <input type="text" class="m-3" style="width: 15em" name="email" placeholder="email" ngModel required><br>
-  <input type="password" class="m-3" style="width: 15em" name="password" placeholder="password" ngModel required><br>
-  <input type="password" class="m-3" style="width: 15em" name="plainPassword" placeholder="confirmez votre mot de passe" ngModel required><br>
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white">
+            <div class="card-body text-center">
+              <div>
+                <h2 class="fw-bold text-uppercase">Inscription</h2>
+                <p class="text-white-50">Merci de renseigner les informations demandées</p>
+              <div class="form-outline form-white mb-1">
+                <label class="form-label">Prénom</label>
+                <input type="text" class="form-control w-75 mx-auto" name="firstName" ngModel required>
+              </div>
+              <div class="form-outline form-white mb-1">
+                <label class="form-label">Nom</label>
+                <input type="text" class="form-control w-75 mx-auto" name="lastName" ngModel required>
+              </div>
+              <div class="form-outline form-white mb-1">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-control w-75 mx-auto" name="username" ngModel required>
+              </div>
+              <div class="form-outline form-white mb-3">
+                <label class="form-label">Username</label>
+                <input type="date" class="form-control w-75 mx-auto" name="birthDate" ngModel required>
+              </div>
+              <div class="form-outline form-white mb-1">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control w-75 mx-auto" name="email" ngModel required>
+              </div>
 
-  <button type="submit" class="btn btn-primary m-3">Créer</button>
-</form>
+              <div class="form-outline form-white mb-1">
+                <label class="form-label">Mot de passe</label>
+                <input type="password" class="form-control w-75 mx-auto" name="password" ngModel required>
+              </div>
+              <div class="form-outline form-white my-1">
+                <label class="form-label">Confirmez votre mot de passe</label>
+                <input type="password" class="form-control w-75 mx-auto" name="plainPassword" ngModel required><br>
+              </div>
+                <button type="submit" class="btn btn-primary m-3" routerLink="/">Valider</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </form>
+</div>

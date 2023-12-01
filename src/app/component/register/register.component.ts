@@ -1,6 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {UserService} from "../../service/user.service";
-import {FormControl, NgForm} from "@angular/forms";
+import {FormControl, NgForm, Validators} from "@angular/forms";
 import {IUser} from "../../interface/iuser";
 
 @Component({
@@ -11,10 +11,17 @@ import {IUser} from "../../interface/iuser";
 export class RegisterComponent {
   @ViewChild('addUser') addUser!: NgForm;
 
-  users:IUser[] = [];
+  registerUser:IUser[] = [];
 
   constructor(private user: UserService) { }
   onSubmit(form: NgForm) {
+    this.user.addUser(form.value);
+    this.user.addUser(form.value).subscribe(data =>{
+      this.registerUser.push(data);
+      console.log(data);
+    });
+  }
+}
 //     if (this.addUser.invalid) {
 // // Le formulaire contient des erreurs de validation
 //
@@ -31,10 +38,3 @@ export class RegisterComponent {
 //         }
 //       });
 //     } else
-    this.user.addUser(form.value);
-    this.user.addUser(form.value).subscribe(data =>{
-      this.users.push(data);
-      console.log(data);
-    });
-  }
-}

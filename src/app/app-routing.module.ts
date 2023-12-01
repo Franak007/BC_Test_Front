@@ -7,6 +7,7 @@ import {LoginComponent} from "./component/login/login.component";
 import {RegisterComponent} from "./component/register/register.component";
 import {Error404Component} from "./component/error404/error404.component";
 import {AccountComponent} from "./component/account/account.component";
+import {NftComponent} from "./component/nft/nft.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'users/:id', component: AccountComponent},
+  {path: 'nft', component: NftComponent},
   {path: '**', component: Error404Component}
 ];
 

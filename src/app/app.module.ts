@@ -16,6 +16,11 @@ import {TokenInterceptor} from "./token.interceptor";
 import { AccountComponent } from './component/account/account.component';
 import { Error404Component } from './component/error404/error404.component';
 import {CommonModule} from "@angular/common";
+import {MatSelectModule} from "@angular/material/select";
+import {MatInputModule} from "@angular/material/input";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import { NftComponent } from './component/nft/nft.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,8 @@ import {CommonModule} from "@angular/common";
     UserComponent,
     AccountComponent,
     Error404Component,
+    NftComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,10 @@ import {CommonModule} from "@angular/common";
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [TokenInterceptor],
   bootstrap: [AppComponent]
