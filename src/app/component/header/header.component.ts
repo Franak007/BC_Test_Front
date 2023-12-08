@@ -47,6 +47,7 @@ export class HeaderComponent implements OnInit {
       (userData) => {
         console.log('Données de l\'utilisateur connecté :', userData);
         this.userData = userData;
+        console.log(userData);
       },
       (error) => {
         console.error('Erreur lors de la récupération des données de l\'utilisateur :', error);

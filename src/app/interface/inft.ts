@@ -8,3 +8,10 @@ export interface INft {
   user: string,
   subCategories: [string]
 }
+
+export interface resultNft{
+  true:string | undefined
+  err: string | undefined
+  userApi: string | undefined
+
+}

@@ -20,6 +20,9 @@ export class NftService {
     return this.http.get<INft[]>(this.url+"/api/nfts", {'headers' : headers});
   }
 
+  getOneNft(id: number|any): Observable<INft>{
+    return this.http.get<INft>(this.url+"/api/nfts/"+id)
+  }
 
   getOneUserByRoute(route:string): Observable<INft>{
     return this.http.get<INft>(this.url+route)

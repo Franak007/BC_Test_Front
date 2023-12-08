@@ -3,6 +3,7 @@ import {UserService} from "../../service/user.service";
 import {ActivatedRoute} from "@angular/router";
 import {IUser} from "../../interface/iuser";
 import {AuthService} from "../../service/auth.service";
+import {INft} from "../../interface/inft";
 
 @Component({
   selector: 'app-account',

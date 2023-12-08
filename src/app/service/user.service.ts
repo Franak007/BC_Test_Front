@@ -22,7 +22,7 @@ export class UserService {
   }
 
 
-  getOneUser(id: number): Observable<IUser>{
+  getOneUser(id: number|any): Observable<IUser>{
     return this.http.get<IUser>(this.url+"/users/"+id)
   }
 

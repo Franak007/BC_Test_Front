@@ -1,1 +1,9 @@
-<p>nft works!</p>
+<div class="container m-5 mx-auto">
+
+  <p class="card-text">{{selectedUser?.nfts}}</p>
+
+  <div class="" *ngFor="let nft of userNFTS">
+      <p>{{ nft.id }}</p>
+    <img src="{{ nft.imagePath }}">
+</div>
+
