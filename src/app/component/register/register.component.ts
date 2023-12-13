@@ -20,6 +20,7 @@ export class RegisterComponent {
       this.registerUser.push(data);
       console.log(data);
     });
+    window.location.assign("http://localhost:4200/");
   }
 }
 //     if (this.addUser.invalid) {

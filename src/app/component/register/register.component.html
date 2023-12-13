@@ -17,26 +17,26 @@
               </div>
               <div class="form-outline form-white mb-1">
                 <label class="form-label">Username</label>
-                <input type="text" class="form-control w-75 mx-auto" name="username" ngModel required>
+                <input type="text" class="form-control w-75 mx-auto" name="username" autocomplete="username" ngModel required>
               </div>
               <div class="form-outline form-white mb-3">
-                <label class="form-label">Username</label>
+                <label class="form-label">Date de naissance</label>
                 <input type="date" class="form-control w-75 mx-auto" name="birthDate" ngModel required>
               </div>
               <div class="form-outline form-white mb-1">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-control w-75 mx-auto" name="email" ngModel required>
+                <input type="email" class="form-control w-75 mx-auto" name="email" autocomplete="username" ngModel required>
               </div>
 
               <div class="form-outline form-white mb-1">
                 <label class="form-label">Mot de passe</label>
-                <input type="password" class="form-control w-75 mx-auto" name="password" ngModel required>
+                <input type="password" class="form-control w-75 mx-auto" name="password" autocomplete="new-password" ngModel required>
               </div>
               <div class="form-outline form-white my-1">
                 <label class="form-label">Confirmez votre mot de passe</label>
-                <input type="password" class="form-control w-75 mx-auto" name="plainPassword" ngModel required><br>
+                <input type="password" class="form-control w-75 mx-auto" name="plainPassword" autocomplete="new-password" ngModel required><br>
               </div>
-                <button type="submit" class="btn btn-primary m-3" routerLink="/">Valider</button>
+                <button type="submit" class="btn btn-primary m-3">Valider</button>
               </div>
             </div>
           </div>

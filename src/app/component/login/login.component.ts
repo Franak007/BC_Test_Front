@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
         console.log(data.token);
         this.auth.saveToken(data.token);
         // window.location.reload();
+        window.location.assign("http://localhost:4200/");
       },
       (err: Error) => console.log(err),
 

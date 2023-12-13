@@ -1,4 +1,4 @@
-<h1>Accueil</h1>
+<h1 class="p-2 mt-2">Accueil</h1>
 <div class="container card-group col-10 p-0">
   <div class="" *ngFor="let nft of nftsList">
     <div class="card m-2 text-center text-white bg-dark rounded" style="width: 14rem;">
@@ -8,6 +8,7 @@
         <p class="text-center">Galerie de {{usersList[getNftUserId(nft.user)].username}}</p>
         <!--    <a href="#" class="btn btn-primary">Go somewhere</a>-->
       </div>
+      <p class="text-center">Prix {{nft.price/100}} eth</p>
     </div>
   </div>
 </div>

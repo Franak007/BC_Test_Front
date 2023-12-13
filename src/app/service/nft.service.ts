@@ -28,4 +28,16 @@ export class NftService {
     return this.http.get<INft>(this.url+route)
   }
 
+  addNft(nft: INft){
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = JSON.stringify(nft);
+    console.log(nft);
+    return this.http.post<INft>(this.url+'/api/nfts', body,
+      {'headers' : headers});
+  }
+
+  deleteNft(id:number){
+    return this.http.delete<INft>(this.url+'/api/names/'+id);
+  }
+
 }

@@ -5,6 +5,7 @@ import {AuthService} from "../../service/auth.service";
 import {IUser} from "../../interface/iuser";
 import {INft} from "../../interface/inft";
 import {NftService} from "../../service/nft.service";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-nft',
@@ -17,12 +18,14 @@ export class NftComponent implements OnInit{
   }
 
   selectedUser: IUser | undefined;
-  userNFTS: INft[] | undefined;
-  userData: any;
-  nftIds: any[] = [];
+  userNFTS: INft[] = [];
+  userData: any = [];
+  nftIds: number[] = [];
+  message: string = '';
+
+
 
   ngOnInit() {
-
     this.getUserData();
   }
 
@@ -36,7 +39,7 @@ export class NftComponent implements OnInit{
             }
           )
         )
-        console.log('Données de l\'utilisateur connecté :', userData?.nfts);
+        console.log('Données de l\'utilisateur connecté :', userData?.id);
         let  table: any[] = []
         let tableNft: INft[] = []
         let  newElement: string = ""
@@ -45,21 +48,46 @@ export class NftComponent implements OnInit{
             table.push(newElement);
         })
         this.userData = userData;
-        console.log(userData);
         this.nftIds = table;
-        console.log(this.nftIds);
         this.nftIds.forEach((element) =>{
           this.nfts.getOneNft(element).subscribe(data=>{
             tableNft.push(data)
           })
         })
         this.userNFTS = tableNft
-        console.log(this.userNFTS)
       },
       (error) => {
         console.error('Erreur lors de la récupération des données de l\'utilisateur :', error);
       }
     );
   }
+  //
+  // public form: FormGroup = new FormGroup({
+  //   user: new FormControl('/api/users/'+this.userData.id),
+  //   title: new FormControl(''),
+  //   price: new FormControl(''),
+  //   imagePath: new FormControl(''),
+  //   description: new FormControl(''),
+  //   createdAt: new FormControl('')
+  //
+  // })
+  //
+  // onSubmit(){
+  //   console.log(this.form);
+  //   this.nfts.addNft(this.form.value).subscribe({
+  //     complete:()=>{
+  //       this.message = "NFT ajouté";
+  //       this.form.reset();
+  //       this.getUserData();
+  //     },
+  //     error:()=>this.message = "Erreur, NFT non créé"
+  //   })
+  // }
+  //
+  // suppressNft(id: number, index: number){
+  //   this.nfts.deleteNft(id).subscribe(message=>{
+  //     this.userNFTS.splice(index, 1);
+  //   })
+  // }
 
 }

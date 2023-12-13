@@ -1,9 +1,52 @@
-<div class="container m-5 mx-auto">
+<h1 class="p-2 mt-2 text-center">Gérez vos NFTS</h1>
+<div class="row justify-content-center">
+<!--  <div class="col-md-4">-->
+    <h5>Liste de vos Nfts</h5>
+    <div class="container card-group col-10 p-0">
+        <div class="" *ngFor="let nft of userNFTS">
+          <div class="card m-2 text-center text-white bg-dark rounded" style="width: 14rem;">
+            <img src="{{ nft.imagePath }}">
+            <div class="card-body">
+              <h5 class="card-title text-center">{{nft.title}}</h5>
+              <p class="text-center">Prix {{nft.price/100}} eth</p>
+            </div>
+          </div>
+        </div>
+<!--    </div>-->
+  </div>
 
-  <p class="card-text">{{selectedUser?.nfts}}</p>
-
-  <div class="" *ngFor="let nft of userNFTS">
-      <p>{{ nft.id }}</p>
-    <img src="{{ nft.imagePath }}">
+<!--  &lt;!&ndash; Formulaire ajout nft &ndash;&gt;-->
+<!--  <div class="col-md-4">-->
+<!--    <h5>Ajouter un Nft</h5>-->
+<!--    <p>{{message}}</p>-->
+<!--    <form (ngSubmit)="onSubmit()" [formGroup]="form">-->
+<!--      <div>-->
+<!--        <label for="user">{{userData.id}}</label>-->
+<!--        <input type="text" id="user" formControlName="user" value="/api/users/{{this.userData.id}}" class="form-control">-->
+<!--      </div>-->
+<!--      <div class="mt-2">-->
+<!--        <label for="title">Titre</label>-->
+<!--        <input type="text" id="title" formControlName="title" class="form-control">-->
+<!--      </div>-->
+<!--      <div class="mt-2">-->
+<!--        <label for="price">Prix</label>-->
+<!--        <input type="number" id="price" formControlName="price" class="form-control">-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <label for="imagePath">Lien url de l'image</label>-->
+<!--        <input type="text" id="imagePath" formControlName="imagePath" class="form-control">-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <label for="description">Description</label>-->
+<!--        <input type="text" id="description" formControlName="description" class="form-control">-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <label for="createdAt">Date de création</label>-->
+<!--        <input type="date" id="createdAt" formControlName="createdAt" class="form-control">-->
+<!--      </div>-->
+<!--      <div class="m-3 text-center">-->
+<!--        <button type="submit" class="btn btn-secondary">Valider</button>-->
+<!--      </div>-->
+<!--    </form>-->
+<!--  </div>-->
 </div>
-
