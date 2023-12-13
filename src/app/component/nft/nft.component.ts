@@ -84,10 +84,10 @@ export class NftComponent implements OnInit{
   //   })
   // }
   //
-  // suppressNft(id: number, index: number){
-  //   this.nfts.deleteNft(id).subscribe(message=>{
-  //     this.userNFTS.splice(index, 1);
-  //   })
-  // }
+  deleteNft(id: number, index: number){
+    this.nfts.deleteNft(id).subscribe(message=>{
+      this.userNFTS.splice(index, 1);
+    })
+  }
 
 }

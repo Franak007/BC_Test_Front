@@ -37,7 +37,7 @@ export class NftService {
   }
 
   deleteNft(id:number){
-    return this.http.delete<INft>(this.url+'/api/names/'+id);
+    return this.http.delete<INft>(this.url+'/api/nfts/'+id);
   }
 
 }

@@ -3,12 +3,13 @@
 <!--  <div class="col-md-4">-->
     <h5>Liste de vos Nfts</h5>
     <div class="container card-group col-10 p-0">
-        <div class="" *ngFor="let nft of userNFTS">
+        <div class="" *ngFor="let nft of userNFTS; let index = index">
           <div class="card m-2 text-center text-white bg-dark rounded" style="width: 14rem;">
             <img src="{{ nft.imagePath }}">
             <div class="card-body">
               <h5 class="card-title text-center">{{nft.title}}</h5>
               <p class="text-center">Prix {{nft.price/100}} eth</p>
+              <a (click)="deleteNft(nft.id, index)" class="btn btn-secondary col-8 text-center">Supprimer</a>
             </div>
           </div>
         </div>

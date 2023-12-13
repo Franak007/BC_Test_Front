@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {UserService} from "../../service/user.service";
 import {FormControl, NgForm, Validators} from "@angular/forms";
 import {IUser} from "../../interface/iuser";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,7 @@ export class RegisterComponent {
       this.registerUser.push(data);
       console.log(data);
     });
-    window.location.assign("http://localhost:4200/");
+    // window.location.assign("http://localhost:4200/");
   }
 }
 //     if (this.addUser.invalid) {
